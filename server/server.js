@@ -21,7 +21,14 @@ app.post('/contact', (req,res) => {
     }
 })
 
-
+app.post('/lorem', (req,res) =>{
+    try{
+        const {cardBody, title} = req.body
+        pool.query('INSERT INTO lorem (title, para) Values ($1, $2)', [title, cardBody])
+    } catch(err){
+        res.status(400).send(err)
+    }
+})
 
 
 
