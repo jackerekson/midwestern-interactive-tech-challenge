@@ -21,6 +21,15 @@ app.post('/contact', (req,res) => {
     }
 })
 
+app.get('/cardinfo', async (req,res)=>{
+    try{
+        const data = await pool.query('SELECT * FROM lorem')
+        res.status(200).send(data)
+    } catch(err) {
+        res.status(400).send(err)
+    }
+})
+
 
 
 

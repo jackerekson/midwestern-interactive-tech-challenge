@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const Form = ({ headTwo }) => {
+const Form = ({ obj }) => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [title, setTitle] = useState('')
@@ -44,10 +44,14 @@ const Form = ({ headTwo }) => {
         .then(alert('Your message has been recived.'))
     }
 
+    if(!obj){
+        return null
+    }
+
     if(!required){
         return (
             <div className='form'>
-                <h2 className='formH2'>{headTwo}</h2>
+                <h2 className='formH2'>{obj.title}</h2>
                 <div className='contactform'>
                     <input className='message1' onChange={updateFirstName} type='text' placeholder='First Name'></input>
                     <input className='message1' onChange={updateLastName} type='text' placeholder='Last Name'></input>    
@@ -65,7 +69,7 @@ const Form = ({ headTwo }) => {
 
     return (
         <div className='form'>
-            <h2 className='formH2'>{headTwo}</h2>
+            <h2 className='formH2'>{obj}</h2>
             <div className='contactform'>
                 <input className='message1' onChange={updateFirstName} type='text' placeholder='First Name'></input>
                 <input className='message1' onChange={updateLastName} type='text' placeholder='Last Name'></input>    

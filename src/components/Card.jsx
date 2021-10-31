@@ -1,15 +1,13 @@
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import React, { useState } from 'react'
 
-const Card = ({ img, body, heading, alt}) => {
-    const[cardBody, setCardBody] = useState(body)
-    const[paragraph, setParagraph] = useState(1)
-    const[length, setLength] = useState('short')
+const Card = ({ img, obj, alt, handleClick}) => {
+    // const {title, para} = obj
+    let arr = obj
+    // console.log(arr.title)
 
-
-    const handleClick = async() => {
-        const res = await axios.get(`https://loripsum.net/api/${paragraph}/${length}/plaintest`)
-        setCardBody(res.data)
+    if(!obj){
+        return null
     }
     return (
         <div className='card'>
@@ -17,8 +15,8 @@ const Card = ({ img, body, heading, alt}) => {
                 <img src={img} alt={alt} />
             </i>
             <section>
-                <h2 className='cardH2'>{heading}</h2>
-                <p className='cardP'>{cardBody}</p>
+                <h2 className='cardH2'>{arr.title}</h2>
+                <p className='cardP'>{arr.para}</p>
             </section>
             <button onClick={handleClick}>Learn More</button>
         </div>

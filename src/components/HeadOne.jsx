@@ -1,8 +1,11 @@
 import React,{ useState } from 'react'
 import Names from './Names'
 
-const HeadOne = ({ body, heading, body2 }) => {
+const HeadOne = ({ body, obj, body2 }) => {
     const [arr, setArr] = useState([])
+    if(!obj){
+        return null
+    }
     let obj1 = {
         'Matt Johnson': true,
         'Bart Paden': true,
@@ -38,20 +41,23 @@ const HeadOne = ({ body, heading, body2 }) => {
         setArr(arr2)
     }
 
+    
     if(!body2){
         return(
             <div className='contactHeadOne'>
-                <h1 className='contactH1'>{heading}</h1>
+                <h1 className='contactH1'>{obj.title}</h1>
                 <div className='goldLine'>
                 </div>
-                {body}
+                <p>
+                    {obj.para}
+                </p>
             </div>
         )
     }
 
     return (
         <div className='footer'>
-            <h1 className='cardH1'>{heading}</h1>
+            <h1 className='cardH1'>{obj.title}</h1>
             <p className='footerP'>{body}<a onClick={handleClick} href='/'>this link</a>{body2}</p>
             <Names arr={arr} />
         </div>
