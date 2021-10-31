@@ -16,7 +16,7 @@ const Card = ({ img, obj, alt, handleClick}) => {
             </i>
             <section>
                 <h2 className='cardH2'>{arr.title}</h2>
-                <p className='cardP'>{arr.para}</p>
+                <p className='cardP'>{obj.para.split('<p>').join('').split('</p>').join('')}</p>
             </section>
             <button onClick={handleClick}>Learn More</button>
         </div>

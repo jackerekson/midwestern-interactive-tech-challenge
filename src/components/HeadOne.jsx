@@ -49,7 +49,7 @@ const HeadOne = ({ body, obj, body2 }) => {
                 <div className='goldLine'>
                 </div>
                 <p>
-                    {obj.para}
+                    {obj.para.split('<p>').join('').split('</p>').join('')}
                 </p>
             </div>
         )
