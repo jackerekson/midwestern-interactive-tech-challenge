@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 
 const Card = ({ img, obj, alt, handleClick}) => {
-    // const {title, para} = obj
     let arr = obj
-    // console.log(arr.title)
 
     if(!obj){
         return null

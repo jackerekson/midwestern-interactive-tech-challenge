@@ -2,7 +2,6 @@ const express = require('express')
 const dotenv = require('dotenv')
 const cors = require('cors')
 const pool = require('./db')
-const { default: axios } = require('axios')
 
 dotenv.config({path: './config.env'})
 const app = express()
