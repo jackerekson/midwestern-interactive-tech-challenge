@@ -25,7 +25,9 @@ After cloning my project all you have to do is navigate to that directory and ru
 To get the database going you'll have to create a postgreSQL database, copy the information
 I have put into database.sql and create the tables with that. From there you will have to 
 add the user, password and database name to the db.js file. Both these files are located
-in the server folder. When that is complete you are ready to start adding information!
+in the server folder. When that is complete you are ready to start adding information!(be
+sure to add the database name, password and other information into both the api branch and
+the main branch)
 
 To start adding information you will have to change to the api branch if you are not already
  on it and start it up.
