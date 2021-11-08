@@ -25,6 +25,7 @@ app.get('/cardinfo', async (req,res)=>{
         const data = await pool.query('SELECT * FROM lorem')
         res.status(200).send(data)
     } catch(err) {
+        console.log(err)
         res.status(400).send(err)
     }
 })
