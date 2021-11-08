@@ -41,7 +41,7 @@ const Form = ({ headTwo }) => {
         }
 
         axios.post('http://localhost:3001/contact', {firstName, lastName, title, email, message})
-        .then(alert('Your message has been recived.'))
+        .then(alert('Your message has been received.'))
     }
 
     if(!required){
