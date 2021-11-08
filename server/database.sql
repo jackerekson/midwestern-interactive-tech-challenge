@@ -1,3 +1,5 @@
+CREATE DATABASE midwestern;
+
 CREATE TABLE "messages"(
     message_id SERIAL PRIMARY KEY,
     first_name varchar(50),
