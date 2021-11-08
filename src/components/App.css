@@ -94,7 +94,7 @@ Red: #800000 */
 }
 
 .contactH1{
-    padding-left: 11rem;
+    padding-left: 1rem;
     font-size: 40px;
 }
 
@@ -256,6 +256,11 @@ button{
         height:4vh;
         padding-bottom: 4rem;
         background: #222222
+    }
+
+    .contactH1{
+        padding-left: 11rem;
+        font-size: 40px;
     }
     
     .header{
