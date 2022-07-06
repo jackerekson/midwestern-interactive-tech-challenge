@@ -97,4 +97,13 @@
         align-content: center;
         margin-top: 9vw;
     }
+
+    .listOfNames{
+        justify-content: space-around;
+    }
+    
+    .namesYo{
+        width: 44vw;
+        margin-left: -25vw;
+    }
 }
