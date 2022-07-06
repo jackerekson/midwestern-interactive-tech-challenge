@@ -1,26 +1,47 @@
-import React from 'react'
-import Card from './Card'
-import Header from './Header'
-import Router from './Router'
-import Form from './Form'
-import Link from './Link'
-import HeadOne from './HeadOne'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Card from '../Card/Card'
+import Header from '../Header/Header'
+import Router from '../Link/Router/Router'
+import Form from '../Form/Form'
+import Link from '../Link/Router/Link'
+import HeadOne from '../HeadOne/HeadOne'
 import './App.css'
 
 const App = () => {
+    let [res, setRes] = useState(null)
+    let [page, setPage] = useState('home')
     const body = 'Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
-    const headOne = `Remove the duplicates in 2 Javascript objects and output the list of idstinct names in an unordered list when `
-    const headOne2 = ` is clicked. If the operation has been completed already notify the user that htis has already been done.`
+    const headOne = `Remove the duplicates in 2 Javascript objects and output the list of distinct names in an unordered list when `
+    const headOne2 = ` is clicked. If the operation has been completed already notify the user that this has already been done.`
     const contactBody = <div><p>Lorem ipsum dolor sit amet, consecteutr adipiscing elit, sed do dos eiusmod tempor incididunt ut labore et trace dolore magna aliqua.</p><p>Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.</p></div>
     
+    const handleContact = () => setPage('contact')
+    const handleHome = () => setPage('home')
+
+    const getPageInfo = () => {
+        // if(page = 'contact'){
+        //     axios.get('https://api.mwi.dev/content/contact').then(res => setRes(res.data))
+        // } else {
+        //     axios.get('https://api.mwi.dev/content/home').then(res => setRes(res.data))
+        // }
+        console.log('hit')
+    }
+
+    useEffect(()=> {
+        getPageInfo()
+
+    }, [page])
+    console.log(res)
+
     return (
-        <div>
-            <Router path='/'>
+        <div className='page'>
+            <Router path='/home'>
                 <div className='homeSize'>
                     <header className='headerHome'>
-                        <Header />
-                        <Link href='/contact' className='home'>
-                            contact
+                        <Header setPage={setPage} />
+                        <Link href='/contact' className='home' >
+                            <button onClick={handleContact} >contact</button>
                         </Link>
                     </header>
                     <section className='cardList'>
@@ -37,8 +58,8 @@ const App = () => {
                 <div className='back'>
                     <header className='header'>
                             <Header />
-                            <Link href='/' className='home'>
-                                home
+                            <Link href='/home' className='home' >
+                                <button onClick={handleHome} >home</button>
                             </Link>
                     </header>
                     <div className='contact'>

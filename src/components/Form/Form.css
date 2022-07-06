@@ -1,0 +1,83 @@
+.form{
+    justify-content: space-between;
+}
+
+.formH2{
+    padding-left: 2rem;
+}
+
+.contactform {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.5rem;
+}
+
+.contactH1{
+    padding-left: 1rem;
+    font-size: 50px;
+}
+
+div.contactform{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 93%;
+}
+
+h2.formH2{
+    padding-left: 4.5rem;
+    margin-bottom: 3rem;
+}
+
+.message{
+    margin: .5rem;
+    background-color: #f5f5f5;
+    border: none;
+    height: 25vh;
+    margin-bottom: 1rem;
+    width: 19.25rem;
+    font-family: 'Poppins medium', sans-serif;
+    align-items: center;
+}
+
+.message1.messageDiv{
+    position: relative;
+    border-width: 0px;
+    padding: 1rem;
+    width: 17.35rem;
+    background-color: #F5F5F5;
+    align-self: center;
+    flex-direction: row;
+    height: 1vh;
+    justify-self: center;
+    margin: .5rem;
+    font-family: 'Poppins medium', sans-serif;
+}
+
+.messageDiv{
+    position: relative;
+    text-align: end;
+    z-index: 1;
+    color: red;
+}
+
+.required:required {
+    border-color: red !important;
+    border-width: 1px !important;
+  }
+.required {
+    border-width: 0px;
+    padding: .75rem;
+    width: 17.75rem;
+    background-color: #F5F5F5;
+    align-self: center;
+    justify-self: center;
+    margin: .5rem;
+    font-family: 'Poppins medium', sans-serif;
+    position: absolute;
+    left: -5px;
+    top: -6px;
+  }
