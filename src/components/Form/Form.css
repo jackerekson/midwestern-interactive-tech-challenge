@@ -14,6 +14,14 @@
     padding-left: 1.5rem;
 }
 
+.topInputRow{
+    width: 85vw;
+}
+
+.bottomInputRow{
+    width: 85vw;
+}
+
 .contactH1{
     padding-left: 1rem;
     font-size: 50px;
@@ -38,9 +46,10 @@ h2.formH2{
     border: none;
     height: 25vh;
     margin-bottom: 1rem;
-    width: 19.25rem;
+    width: 19.5rem;
     font-family: 'Poppins medium', sans-serif;
     align-items: center;
+    margin-left: -1vw;
 }
 
 .message1.messageDiv{
@@ -80,4 +89,87 @@ h2.formH2{
     position: absolute;
     left: -5px;
     top: -6px;
+  }
+
+
+  @media screen and (min-width: 767px) {
+    .form{
+        width:100%;
+    }
+
+    input.message1{
+        border-width: 0px;
+        padding: 1rem;
+        width: 50%;
+        background-color: #F5F5F5;
+        align-self: center;
+        justify-self: center;
+        margin: .5rem;
+        font-family: 'Poppins medium', sans-serif;
+    }
+
+    .message1.messageDiv{
+        position: relative;
+        border-width: 0px;
+        padding: 1rem;
+        width: 50%;
+        background-color: #F5F5F5;
+        align-self: center;
+        flex-direction: row;
+        height: 1.7vh;
+        justify-self: center;
+        margin: .5rem;
+        font-family: 'Poppins medium', sans-serif;
+    }
+    
+    .messageDiv{
+        position: relative;
+        text-align: end;
+        z-index: 1;
+        color: red;
+    }
+
+    textarea.message{
+        width: 90%;
+        margin: .5rem;
+        background-color: #F5F5F5;
+        border: none;
+        height: 20vh;
+        margin-bottom: 1rem;
+        font-family: 'Poppins medium', sans-serif;
+        align-items: center;
+    }
+
+    .topInputRow{
+        width: 91.5%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bottomInputRow{
+        width: 91.5%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    input.required{
+        border-width: 0px;
+        padding: 1rem;
+        background-color: #F5F5F5;
+        align-self: center;
+        justify-self: center;
+        font-family: 'Poppins medium', sans-serif;
+        width: 91%;
+        position: absolute;
+        left: -8px;
+        top: -8px;
+    }
+    
+    input.required:required:before {
+        content: 'Required' !important;
+        color: red !important;
+        float: right !important;
+        border-color: red !important;
+        border-width: 1px !important;
+      }
   }

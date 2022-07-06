@@ -1,12 +1,7 @@
 import React from 'react';
-import { useEffect } from 'react/cjs/react.development';
-import "./HeadOne.css";
+import "./ExtraInfo.css";
 
 const Names = ({ arr }) => {
-
-    useEffect(() => {
-        
-    });
     const showObj3 = arr.map(e=>{
         return(<li key={e}>{e}</li>);
     });

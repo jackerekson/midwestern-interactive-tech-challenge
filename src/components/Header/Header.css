@@ -1,3 +1,10 @@
 .contactLogo{
     width: 65vw;
 }
+
+
+@media screen and (min-width: 767px) {
+    .contactLogo {
+        max-width: 23rem;
+    }
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import "./Form.css"
 
-const Form = ({ headTwo }) => {
+const Form = ( {res} ) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [title, setTitle] = useState('');
@@ -48,7 +48,7 @@ const Form = ({ headTwo }) => {
     if(!required){
         return (
             <div className='form'>
-                <h2 className='formH2'>{headTwo}</h2>
+                <h2 className='formH2'>{res.title}</h2>
                 <div className='contactform'>
                     <div className="topInputRow">
                         <input className='message1' onChange={updateFirstName} type='text' placeholder='First Name'></input>
@@ -70,7 +70,7 @@ const Form = ({ headTwo }) => {
 
     return (
         <div className='form'>
-            <h2 className='formH2'>{headTwo}</h2>
+            <h2 className='formH2'>{res.title}</h2>
             <div className='contactform'>
                 <input className='message1' onChange={updateFirstName} type='text' placeholder='First Name'></input>
                 <input className='message1' onChange={updateLastName} type='text' placeholder='Last Name'></input>    

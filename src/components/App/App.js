@@ -5,49 +5,44 @@ import Header from '../Header/Header'
 import Router from '../Link/Router/Router'
 import Form from '../Form/Form'
 import Link from '../Link/Router/Link'
-import HeadOne from '../HeadOne/HeadOne'
+import HeadOne from '../ExtraInfo/ExtraInfo'
 import './App.css'
 
 const App = () => {
-    let [res, setRes] = useState(null)
+    //setting response state and page state
+    let [res, setRes] = useState([])
     let [page, setPage] = useState('home')
-    const body = 'Lorem ipsum sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
+    //making the home page lower information text
     const headOne = `Remove the duplicates in 2 Javascript objects and output the list of distinct names in an unordered list when `
     const headOne2 = ` is clicked. If the operation has been completed already notify the user that this has already been done.`
-    const contactBody = <div><p>Lorem ipsum dolor sit amet, consecteutr adipiscing elit, sed do dos eiusmod tempor incididunt ut labore et trace dolore magna aliqua.</p><p>Proin sagittis nisl rhoncus mattis rhoncus. At augue eget arcu dictum varius duis at consectetur lorem.</p></div>
     
+    //creating functions to change the page state for the axios call bellow
     const handleContact = () => setPage('contact')
     const handleHome = () => setPage('home')
 
-    const getPageInfo = () => {
-        // if(page = 'contact'){
-        //     axios.get('https://api.mwi.dev/content/contact').then(res => setRes(res.data))
-        // } else {
-        //     axios.get('https://api.mwi.dev/content/home').then(res => setRes(res.data))
-        // }
-        console.log('hit')
-    }
-
+    //the useEffect will run the getPageInfo function every time the page is changed to get the information needed to render the page and set the res state to that information
     useEffect(()=> {
+        const getPageInfo = async() => {
+                await axios.get(`https://api.mwi.dev/content/${page}`).then(res => setRes(res.data.data))
+            }
         getPageInfo()
-
     }, [page])
-    console.log(res)
-
+    
+    //returns the path of the URL either '/' or '/contact'
     return (
         <div className='page'>
-            <Router path='/home'>
+            <Router path='/'>
                 <div className='homeSize'>
                     <header className='headerHome'>
                         <Header setPage={setPage} />
                         <Link href='/contact' className='home' >
-                            <button onClick={handleContact} >contact</button>
+                            <button onClick={handleContact} className='pageLink'>contact</button>
                         </Link>
                     </header>
                     <section className='cardList'>
-                        <Card img='../images/Talkie.png' body={body} heading='Heading Two' alt='talkie' />
-                        <Card img='../images/Rabbit.png' body={body} heading='Heading Two' alt='rabbit' />
-                        <Card img='../images/Shield.png' body={body} heading='Heading Two' alt='shield' />
+                        <Card img='../images/Talkie.png' res={res[0]} alt='talkie' />
+                        <Card img='../images/Rabbit.png' res={res[1]} alt='rabbit' />
+                        <Card img='../images/Shield.png' res={res[2]} alt='shield' />
                     </section>
                     <footer>
                         <HeadOne heading='Heading One' body={headOne} body2={headOne2} />
@@ -58,16 +53,16 @@ const App = () => {
                 <div className='back'>
                     <header className='header'>
                             <Header />
-                            <Link href='/home' className='home' >
-                                <button onClick={handleHome} >home</button>
+                            <Link href='/' className='home' >
+                                <button onClick={handleHome} className='pageLink'>home</button>
                             </Link>
                     </header>
                     <div className='contact'>
                         <section className='contactLeft'>
-                            <HeadOne heading='Heading One' body={contactBody} />
+                            <HeadOne  res={res[0]} />
                         </section>
                         <section className='contactRight'>
-                            <Form headTwo='Heading Two' />
+                            <Form res={res[0]} headTwo='Heading Two' />
                         </section>
                     </div>
                 </div>
