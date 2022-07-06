@@ -1,0 +1,109 @@
+.footer{
+    background-color: #222222;
+    color:#f5f5f5;
+}
+
+.cardH1{
+    padding-left: 2rem;
+}
+
+.footerP{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.namesYo{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.cardH1:after{
+    display: block;
+    content: '';
+    width: 54vw;
+    height: 4px;
+    background: #DEBF79;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.cardH1{
+    font-size: 50px;
+}
+
+.listOfNames{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92vw;
+    margin-left: 8vw;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+
+
+@media screen and (min-width: 767px) {
+    .contactH1{
+        padding-left: 11rem;
+        font-size: 50px;
+    }
+
+    .contactH1:after{
+        display: block;
+        content: '';
+        width: 5.5vw;
+        height: 4px;
+        background: #DEBF79;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        
+    }
+
+    .cardH1{
+        padding-left: 7rem;
+    }
+    
+    .cardH1:after{
+        display: block;
+        content: '';
+        width: 7.5vw;
+        height: 4px;
+        background: #DEBF79;
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+
+    .footerP{
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+
+    div.contactHeadOne p{
+        padding-left: 11rem;
+        padding-right: 11rem
+    }
+
+    .contactHeadOne{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin-top: 9vw;
+    }
+
+    .listOfNames{
+        justify-content: space-around;
+    }
+    
+    .namesYo{
+        width: 44vw;
+        margin-left: -25vw;
+    }
+}

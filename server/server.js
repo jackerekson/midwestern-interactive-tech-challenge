@@ -20,6 +20,7 @@ app.post('/contact', (req,res) => {
     }
 })
 
+<<<<<<< HEAD
 app.get('/cardinfo', async (req,res)=>{
     try{
         const data = await pool.query('SELECT * FROM lorem')
@@ -34,4 +35,6 @@ app.get('/cardinfo', async (req,res)=>{
 
 
 
+=======
+>>>>>>> api
 app.listen(3001, () => console.log('running on 3001'))

@@ -8,9 +8,3 @@ CREATE TABLE "messages"(
     email varchar(100),
     para text
 );
-
-CREATE TABLE "lorem"(
-    lorem_id SERIAL PRIMARY KEY,
-    title TEXT,
-    para TEXT
-);
