@@ -1,7 +1,7 @@
 
 # Tech Challenge
 
-This is a revision of the first code challenge I completed. There is some minor changes made to 
+This is a revision of the first code challenge I completed as well as completing question 2. There is some minor changes made to 
 include removing the .css file with all the styling in it and giving each component its own file
 as well as cleaning up some of the code, changing some of the variable names to make more sense
 and commenting the code. (It took me a while to figure out what was going on, comments are a good
